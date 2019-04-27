@@ -1,0 +1,4 @@
+# gem-jar/.gitignore
+*.DS_Store
+/db/*
+dive.log
