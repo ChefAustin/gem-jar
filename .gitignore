@@ -1,4 +1,4 @@
 # gem-jar/.gitignore
 *.DS_Store
-/db/*
+db/*
 dive.log
