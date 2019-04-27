@@ -1,0 +1,11 @@
+# /root/.gemstash/config.yml
+---
+:base_path: "/root/.gemstash"
+:cache_type: memory
+:db_adapter: sqlite3
+:rubygems_url: https://rubygems.org
+:puma_threads: 16
+:bind: tcp://0.0.0.0:9292
+:protected_fetch: false
+:fetch_timeout: 20
+:log_file: gemstash_server.log
