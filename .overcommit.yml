@@ -14,7 +14,7 @@
 # https://github.com/brigade/overcommit#configuration
 #
 # Uncomment the following lines to make the configuration take effect.
-
+quiet: false
 PreCommit:
 #  RuboCop:
 #    enabled: true
@@ -34,7 +34,7 @@ PreCommit:
   YamlLint:
     enabled: true
     description: 'Analyze with YAMlint'
-    required_executable: 'yamllint'
+    required_executable: 'yaml-lint'
     flags: ['--format=parsable']
     install_command: 'gem install yamllint'
     include:
