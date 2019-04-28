@@ -31,15 +31,6 @@ PreCommit:
     required_executable: 'hadolint'
     include:
       - '**/Dockerfile*'
-  YamlLint:
-    enabled: true
-    description: 'Analyze with YAMlint'
-    required_executable: 'yaml-lint'
-    flags: ['--format=parsable']
-    install_command: 'gem install yamllint'
-    include:
-      - '**/*.yaml'
-      - '**/*.yml'
 #PostCheckout:
 #  ALL: # Special hook name that customizes all hooks of this type
 #    quiet: true # Change all post-checkout hooks to only display output on failure
