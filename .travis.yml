@@ -6,6 +6,7 @@ env:
 branches:
   only:
   - master
+  - development
 
 language: ruby
 
