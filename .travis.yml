@@ -19,4 +19,4 @@ before_install:
 - docker run --name gem-jar -p 9292:9292 -v $(pwd)/db:/root/.gemstash chefaustin/gem-jar:latest
 
 script:
-- bundle exec rake test
+- pwd
