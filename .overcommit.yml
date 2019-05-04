@@ -14,8 +14,8 @@
 # https://github.com/brigade/overcommit#configuration
 #
 # Uncomment the following lines to make the configuration take effect.
-
-#PreCommit:
+quiet: false
+PreCommit:
 #  RuboCop:
 #    enabled: true
 #    on_warn: fail # Treat all warnings as failures
@@ -25,6 +25,12 @@
 #    exclude:
 #      - '**/db/structure.sql' # Ignore trailing whitespace in generated files
 #
+  Hadolint:
+    enabled: true
+    description: 'Analyze with Hadolint'
+    required_executable: 'hadolint'
+    include:
+      - '**/Dockerfile*'
 #PostCheckout:
 #  ALL: # Special hook name that customizes all hooks of this type
 #    quiet: true # Change all post-checkout hooks to only display output on failure

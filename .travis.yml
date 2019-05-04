@@ -1,0 +1,23 @@
+dist: xenial
+
+env:
+  - CI=true
+
+branches:
+  only:
+  - master
+  - development
+
+language: ruby
+
+services:
+  - docker
+
+before_install:
+- wget https://github.com/wagoodman/dive/releases/download/v0.7.2/dive_0.7.2_linux_amd64.deb
+- sudo apt install ./dive_0.7.2_linux_amd64.deb
+- docker build -t chefaustin/gem-jar:latest .
+- docker run -d --name gem-jar -p 9292:9292 -v $(pwd)/db:/root/.gemstash chefaustin/gem-jar:latest
+
+script:
+- dive chefaustin/gem-jar:latest
