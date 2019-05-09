@@ -1,4 +1,11 @@
 # gem-jar/.gitignore
-*.DS_Store
+.DS_Store
+.DS_Store?
+*.DS_Store*
+*.pem
+.Spotlight-V100
+.Trashes
+data/*
 db/*
 dive.log
+._*
