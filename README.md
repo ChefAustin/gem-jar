@@ -1,5 +1,6 @@
 # gem-jar
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6e0b9c2abb9848f2ab7dca8d227786b2)](https://app.codacy.com/app/ChefAustin/gem-jar?utm_source=github.com&utm_medium=referral&utm_content=ChefAustin/gem-jar&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/ChefAustin/gem-jar.svg?branch=master)](https://travis-ci.org/ChefAustin/gem-jar)
 
 No nonsense Gemstash instance thrown in a container, backed by sqlite3 and wrapped-up with a bow. Non-configurable by design; for those that just want a no frills, quickly deployable Gem caching service.
