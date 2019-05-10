@@ -13,27 +13,41 @@
 # For a complete list of options that you can use to customize hooks, see:
 # https://github.com/brigade/overcommit#configuration
 #
-# Uncomment the following lines to make the configuration take effect.
 quiet: false
+
 PreCommit:
-#  RuboCop:
-#    enabled: true
-#    on_warn: fail # Treat all warnings as failures
-#
-#  TrailingWhitespace:
-#    enabled: true
-#    exclude:
-#      - '**/db/structure.sql' # Ignore trailing whitespace in generated files
-#
   Hadolint:
     enabled: true
     description: 'Analyze with Hadolint'
     required_executable: 'hadolint'
     include:
       - '**/Dockerfile*'
-#PostCheckout:
-#  ALL: # Special hook name that customizes all hooks of this type
-#    quiet: true # Change all post-checkout hooks to only display output on failure
-#
-#  IndexTags:
-#    enabled: true # Generate a tags file with `ctags` each time HEAD changes
+
+PostCheckout:
+  BundleInstall:
+    enabled: false
+    description: 'Install Bundler dependencies'
+    requires_files: true
+    required_executable: 'bundle'
+    install_command: 'gem install bundler'
+    flags: ['install']
+    include:
+      - 'Gemfile'
+      - 'Gemfile.lock'
+      - '*.gemspec'
+
+CommitMsg:
+  CapitalizedSubject:
+    enabled: false
+
+  EmptyMessage:
+    enabled: true
+    description: 'Check for empty commit message'
+
+  RussianNovel:
+    enabled: false
+    description: 'Check length of commit message'
+
+  SingleLineSubject:
+    enabled: true
+    description: 'Check subject line'

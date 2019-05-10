@@ -1,0 +1,11 @@
+schemaVersion: '2.0.0' # Make sure to test the latest schema version
+
+fileExistenceTests:
+- name: 'existence-Gemfile'
+  path: '/Gemfile'
+  shouldExist: true
+- name: 'existence-config.yml'
+  path: '/config.yml'
+  shouldExist: true
+- name: 'existence-docker_health.rb'
+  path: '/docker_health.rb'
