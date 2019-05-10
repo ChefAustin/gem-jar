@@ -12,7 +12,7 @@ No nonsense Gemstash instance thrown in a container, backed by sqlite and wrappe
 5.  `mkdir -p ~/.gem; touch ~/.gem/credentials; echo ":gemstash: $resp_key"; chmod 0600 ~/.gem/credentials` <= Create and append key to `~/.gem/credentials`
 
 ## Improvements to come
--  Tests:
+- Tests:
   -  [Container Structure](https://github.com/GoogleContainerTools/container-structure-test)
   -  [Serverspec](https://github.com/mizzy/serverspec)
   -  [Dockerspec](https://github.com/zuazo/dockerspec)
