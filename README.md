@@ -13,10 +13,10 @@ No nonsense Gemstash instance thrown in a container, backed by sqlite and wrappe
 
 ## Improvements to come
 -   Tests:
-  - [Container Structure](https://github.com/GoogleContainerTools/container-structure-test)
-  - [Serverspec](https://github.com/mizzy/serverspec)
-  - [Dockerspec](https://github.com/zuazo/dockerspec)
-  - Fine-tune Docker `HEALTHCHECK`
+ - [Container Structure](https://github.com/GoogleContainerTools/container-structure-test)
+ - [Serverspec](https://github.com/mizzy/serverspec)
+ - [Dockerspec](https://github.com/zuazo/dockerspec)
+ - Fine-tune Docker `HEALTHCHECK`
 -   Other:
   - ~~Figure out proper FOSS `LICENSE`~~
   - Build out wiki
