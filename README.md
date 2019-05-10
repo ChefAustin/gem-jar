@@ -12,14 +12,16 @@ No nonsense Gemstash instance thrown in a container, backed by sqlite and wrappe
 5.  `mkdir -p ~/.gem; touch ~/.gem/credentials; echo ":gemstash: $resp_key"; chmod 0600 ~/.gem/credentials` <= Create and append key to `~/.gem/credentials`
 
 ## Improvements to come
--   Tests:
- - [Container Structure](https://github.com/GoogleContainerTools/container-structure-test)
- - [Serverspec](https://github.com/mizzy/serverspec)
- - [Dockerspec](https://github.com/zuazo/dockerspec)
- - Fine-tune Docker `HEALTHCHECK`
--   Other:
-  - ~~Figure out proper FOSS `LICENSE`~~
-  - Build out wiki
--   Functionality:
-  - Move to docker-compose with containerized ingress
-  - SSL/TLS termination (LetsEncrypt?)
+### Tests:
+1.  [Container Structure](https://github.com/GoogleContainerTools/container-structure-test)
+2.  [Serverspec](https://github.com/mizzy/serverspec)
+3.  [Dockerspec](https://github.com/zuazo/dockerspec)
+4.  Fine-tune Docker `HEALTHCHECK`
+
+### Functionality
+1.  Move to docker-compose with containerized ingress
+2.  SSL/TLS termination (LetsEncrypt?)
+
+### Other:
+1.  ~~Figure out proper FOSS `LICENSE`~~
+2.  Build out wiki
