@@ -1,6 +1,6 @@
 FROM ruby:2.6.2
 LABEL maintainer="austinculter@gmail.com"
-LABEL version="0.1.1"
+LABEL version="0.1.2"
 
 COPY Gemfile* config.yml docker_health.rb /
 RUN bundle install --gemfile /Gemfile
