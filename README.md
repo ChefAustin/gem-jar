@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/ChefAustin/gem-jar.svg?branch=master)](https://travis-ci.org/ChefAustin/gem-jar)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e8e21cfd9b4a4c66b43eee27ef581513)](https://www.codacy.com/app/ChefAustin/gem-jar?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ChefAustin/gem-jar&amp;utm_campaign=Badge_Grade)
+[![Coverage Status](https://coveralls.io/repos/github/ChefAustin/gem-jar/badge.svg?branch=master)](https://coveralls.io/github/ChefAustin/gem-jar?branch=master)
 
 No nonsense Gemstash instance thrown in a container, backed by sqlite and wrapped-up with a bow. Non-configurable by design; for those that just want a no frills, quickly deployable Gem caching service.
 
