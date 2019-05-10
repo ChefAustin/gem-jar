@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/ChefAustin/gem-jar.svg?branch=master)](https://travis-ci.org/ChefAustin/gem-jar)
 
-No nonsense Gemstash instance thrown in a container, backed by sqlite3 and wrapped-up with a bow. Non-configurable by design; for those that just want a no frills, quickly deployable Gem caching service.
+No nonsense Gemstash instance thrown in a container, backed by sqlite and wrapped-up with a bow. Non-configurable by design; for those that just want a no frills, quickly deployable Gem caching service.
 
 ## Getting started
 1. `git clone https://github.com/chefaustin/gem-jar.git` <= Clone this repo
