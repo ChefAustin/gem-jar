@@ -6,6 +6,7 @@ group :development do
   gem 'coveralls', require: false
   gem 'docker'
   gem 'inspec'
+  gem 'rake'
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'serverspec'

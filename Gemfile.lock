@@ -226,6 +226,7 @@ GEM
     rack-protection (2.0.5)
       rack
     rainbow (3.0.0)
+    rake (12.3.2)
     representable (3.0.4)
       declarative (< 0.1.0)
       declarative-option (< 0.2.0)
@@ -396,10 +397,11 @@ DEPENDENCIES
   docker
   gemstash (= 2.0.0)
   inspec
+  rake
   rubocop
   rubocop-performance
   serverspec
   yaml-lint
 
 BUNDLED WITH
-   1.17.2
+   2.0.1
