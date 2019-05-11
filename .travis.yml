@@ -16,6 +16,7 @@ services:
 before_install:
 - gem uninstall bundler
 - gem install bundler --version '2.0.1'
+- bundle install
 - bundle update --bundler
 - wget https://github.com/wagoodman/dive/releases/download/v0.7.2/dive_0.7.2_linux_amd64.deb
 - sudo apt install ./dive_0.7.2_linux_amd64.deb
@@ -27,4 +28,3 @@ script:
 - dive chefaustin/gem-jar:latest
 - container-structure-test test --image chefaustin/gem-jar:latest --config ./container-structure-config.yaml
 - bundle exec rspec
-- bundle exec test_with_coveralls
