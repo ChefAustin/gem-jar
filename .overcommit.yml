@@ -21,6 +21,13 @@ PreCommit:
     include:
       - '**/Dockerfile*'
 
+  Rubocop:
+    enabled: true
+    include:
+      - '**/*.gemspec'
+      - '**/*.rb'
+      - '**/Gemfile'
+
 PostCheckout:
   BundleInstall:
     enabled: false
