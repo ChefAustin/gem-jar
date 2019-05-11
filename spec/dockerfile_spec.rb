@@ -31,4 +31,10 @@ describe 'Dockerfile' do
       it { should be_installed.by('gem').with_version('2.0.0') }
     end
   end
+
+  ['docker', 'inspec', 'rubocop', 'rubocop-performance', 'serverspec'].each do |gem|
+    describe package(gem) do
+      it { should_not be_installed }
+    end
+  end
 end
