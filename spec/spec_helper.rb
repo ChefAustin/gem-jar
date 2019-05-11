@@ -1,5 +1,5 @@
 require 'coveralls'
-Coveralls.wear_merged!
+Coveralls.wear!
 
 require 'serverspec'
 set :backend, :exec
