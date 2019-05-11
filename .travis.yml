@@ -24,3 +24,4 @@ script:
 - dive chefaustin/gem-jar:latest
 - container-structure-test test --image chefaustin/gem-jar:latest --config ./container-structure-config.yaml
 - bundle exec rspec
+- bundle exec test_with_coveralls
