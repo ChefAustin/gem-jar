@@ -3,7 +3,7 @@ require 'rspec/core/rake_task'
 require 'coveralls/rake/task'
 
 Coveralls::RakeTask.new
-task :test_with_coveralls => [:spec, :features, 'coveralls:push']
+task test_with_coveralls: [:spec, :features, 'coveralls:push']
 
 task spec: 'spec:all'
 task default: :spec
