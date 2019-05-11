@@ -13,8 +13,6 @@
 # For a complete list of options that you can use to customize hooks, see:
 # https://github.com/brigade/overcommit#configuration
 #
-quiet: false
-
 PreCommit:
   Hadolint:
     enabled: true

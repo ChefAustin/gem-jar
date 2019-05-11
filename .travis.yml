@@ -19,7 +19,8 @@ before_install:
 - curl -LO https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64 && chmod +x container-structure-test-linux-amd64 && sudo mv container-structure-test-linux-amd64 /usr/local/bin/container-structure-test
 - docker build -t chefaustin/gem-jar:latest .
 - docker run -d --name gem-jar -p 9292:9292 -v $(pwd)/db:/root/.gemstash chefaustin/gem-jar:latest
--
+- bundle install
 script:
 - dive chefaustin/gem-jar:latest
 - container-structure-test test --image chefaustin/gem-jar:latest --config ./container-structure-config.yaml
+- bundle exec rspec
