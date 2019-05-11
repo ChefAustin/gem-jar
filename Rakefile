@@ -1,5 +1,6 @@
 require 'rake'
 require 'rspec/core/rake_task'
+require 'coveralls/rake/task'
 
 task spec: 'spec:all'
 task default: :spec
