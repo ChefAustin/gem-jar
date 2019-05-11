@@ -1,4 +1,3 @@
-require 'coveralls'
-Coveralls.wear!
+require 'serverspec'
 
-# Your code here.
+set :backend, :exec
