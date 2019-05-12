@@ -26,3 +26,4 @@ No nonsense Gemstash instance thrown in a container, backed by sqlite and wrappe
 ### Other
 1.  ~~Figure out proper FOSS `LICENSE`~~
 2.  Build out wiki
+3.  Thin-out the base image

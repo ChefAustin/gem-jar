@@ -1,6 +1,43 @@
 require 'serverspec'
 require 'docker'
 
+# Test Options
+container_creation_opts = {
+  'Entrypoint' => ['bash'],
+  'Name' => 'test-gem-jar'
+}
+
+# Metadata
+DOCKERFILE_LABELS = [
+  'maintainer',
+  'version'
+].freeze
+
+# Gems
+PRODUCTION_GEMS = [
+  'gemstash'
+].freeze
+
+DEVELOPMENT_GEMS = [
+  'docker',
+  'inspec',
+  'rubocop',
+  'rubocop-performance',
+  'serverspec'
+].freeze
+
+PATHS_TO_CREATED_DIRS = [
+  '/root'
+]
+
+# Files
+PATHS_TO_CREATED_FILES = [
+  '/config.yml',
+  '/docker_health.rb',
+  '/Gemfile',
+  '/Gemfile.lock'
+].freeze
+
 describe 'Dockerfile' do
   before(:all) do
     @image = Docker::Image.build_from_dir('.')
@@ -9,30 +46,44 @@ describe 'Dockerfile' do
     set :os, family: :debian
     set :backend, :docker
     set :docker_image, @image.id
-    set :docker_container_create_options, 'Entrypoint' => ['bash']
+    set :docker_container_create_options, container_creation_opts
   end
 
-  it 'should have the maintainer label' do
-    expect(@image.json['Config']['Labels'].key?('maintainer'))
+  DOCKERFILE_LABELS.each do |label|
+    it 'should have labels' do
+      expect(@image.json['Config']['Labels'].key?(label))
+    end
+  end
+end
+
+describe docker_container(container_creation_opts['Name']) do
+#  it { should exist }
+#  it { should be_running }
+
+  describe user('root') do
+    it { should exist }
+    it { should have_home_directory '/root' }
   end
 
-  it 'should have the version label' do
-    expect(@image.json['Config']['Labels'].key?('version'))
-  end
-
-  ['Gemfile', 'Gemfile.lock'].each do |file|
-    describe file("/#{file}") do
+  PATHS_TO_CREATED_FILES.each do |file|
+    describe file(file) do
       it { should exist }
     end
   end
 
-  ['gemstash'].each do |gem|
-    describe package(gem) do
-      it { should be_installed.by('gem').with_version('2.0.0') }
+  PATHS_TO_CREATED_DIRS.each do |dir|
+    describe file(dir) do
+      it { should be_directory }
     end
   end
 
-  ['docker', 'inspec', 'rubocop', 'rubocop-performance', 'serverspec'].each do |gem|
+  PRODUCTION_GEMS.each do |gem|
+    describe package(gem) do
+      it { should be_installed.by('gem') }
+    end
+  end
+
+  DEVELOPMENT_GEMS.each do |gem|
     describe package(gem) do
       it { should_not be_installed }
     end
