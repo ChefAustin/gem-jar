@@ -50,7 +50,7 @@ describe 'Dockerfile' do
   end
 
   DOCKERFILE_LABELS.each do |label|
-    it 'should have labels' do
+    it "should have label: #{label}" do
       expect(@image.json['Config']['Labels'].key?(label))
     end
   end
