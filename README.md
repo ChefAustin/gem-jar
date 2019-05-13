@@ -5,12 +5,15 @@
 
 No nonsense Gemstash instance thrown in a container, backed by sqlite and wrapped-up with a bow. Non-configurable by design; for those that just want a no frills, quickly deployable Gem caching service.
 
+If you'd prefer an even less-frills option, check out the `feat/alpine` branch!
+
 ## Getting started
 1.  `git clone https://github.com/chefaustin/gem-jar.git` <= Clone this repo
 2.  `cd gem-jar` <= Navigate into it
-3.  `docker run -d --name gem-jar -p 9292:9292 -v db:/root/.gemstash chefaustin/gem-jar:latest` <= Bring container up
-4.  `resp_key=$(docker exec -it gem-jar gemstash authorize | cut -d ' ' -f 5)` <= Generate and grab a new API key
-5.  `mkdir -p ~/.gem; touch ~/.gem/credentials; echo ":gemstash: $resp_key"; chmod 0600 ~/.gem/credentials` <= Create and append key to `~/.gem/credentials`
+3.  `docker build -t chefaustin/gem-jar:latest .`
+4.  `docker run -d --name gem-jar -p 9292:9292 -v db:/root/.gemstash chefaustin/gem-jar:latest` <= Bring container up
+5.  `resp_key=$(docker exec -it gem-jar gemstash authorize | cut -d ' ' -f 5)` <= Generate and grab a new API key
+6.  `mkdir -p ~/.gem; touch ~/.gem/credentials; echo ":gemstash: $resp_key"; chmod 0600 ~/.gem/credentials` <= Create and append key to `~/.gem/credentials`
 
 ## Improvements to come
 ### Tests
