@@ -5,6 +5,8 @@
 
 No nonsense Gemstash instance thrown in a container, backed by sqlite and wrapped-up with an Alpine Linux bow. Non-configurable by design; for those that just want a no frills, quickly deployable Gem caching service.
 
+If you'd prefer a few more frills (like a bash shell), check out the `master` branch.
+
 ## Getting started
 1.  `git clone https://github.com/chefaustin/gem-jar.git` <= Clone this repo
 2.  `cd gem-jar` <= Navigate into it
