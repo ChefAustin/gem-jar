@@ -3,8 +3,8 @@ require 'docker'
 
 # Test Options
 container_creation_opts = {
-  'Entrypoint' => ['bash'],
-  'Name' => 'test-gem-jar'
+  'Entrypoint' => ['sh'],
+  'Name' => 'gem-jar-alpine-beta-test'
 }
 
 # Metadata
@@ -15,7 +15,9 @@ DOCKERFILE_LABELS = [
 
 # Gems
 PRODUCTION_GEMS = [
-  'gemstash'
+  'gemstash',
+  'json',
+  'sqlite'
 ].freeze
 
 DEVELOPMENT_GEMS = [
@@ -41,9 +43,9 @@ PATHS_TO_CREATED_FILES = [
 describe 'Dockerfile' do
   before(:all) do
     @image = Docker::Image.build_from_dir('.')
-    @image.tag(repo: 'chefaustin/gem-jar', tag: 'latest')
+    @image.tag(repo: 'chefaustin/gem-jar', tag: 'alpine-beta-test')
 
-    set :os, family: :debian
+    set :os, family: :linux
     set :backend, :docker
     set :docker_image, @image.id
     set :docker_container_create_options, container_creation_opts

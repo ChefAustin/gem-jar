@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'gemstash', '2.0.0'
+gem 'json'
+gem 'sqlite'
 
 group :development do
   gem 'docker'
