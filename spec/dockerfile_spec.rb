@@ -4,7 +4,7 @@ require 'docker'
 # Test Options
 container_creation_opts = {
   'Entrypoint' => ['sh'],
-  'Name' => 'gem-jar-alpine-beta-test'
+  'Name' => 'gem-jar-alpine-latest-test'
 }
 
 # Metadata
@@ -43,7 +43,7 @@ PATHS_TO_CREATED_FILES = [
 describe 'Dockerfile' do
   before(:all) do
     @image = Docker::Image.build_from_dir('.')
-    @image.tag(repo: 'chefaustin/gem-jar', tag: 'alpine-beta-test')
+    @image.tag(repo: 'chefaustin/gem-jar', tag: 'alpine-latest-test')
 
     set :os, family: :linux
     set :backend, :docker
@@ -87,7 +87,7 @@ describe docker_container(container_creation_opts['Name']) do
 
   DEVELOPMENT_GEMS.each do |gem|
     describe package(gem) do
-      it { should_not be_installed }
+      it { should_not be_installed.by('gem') }
     end
   end
 end
