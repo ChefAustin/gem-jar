@@ -1,5 +1,6 @@
 # gem-jar
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6e0b9c2abb9848f2ab7dca8d227786b2)](https://app.codacy.com/app/ChefAustin/gem-jar?utm_source=github.com&utm_medium=referral&utm_content=ChefAustin/gem-jar&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/ChefAustin/gem-jar.svg?branch=master)](https://travis-ci.org/ChefAustin/gem-jar)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e8e21cfd9b4a4c66b43eee27ef581513)](https://www.codacy.com/app/ChefAustin/gem-jar?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ChefAustin/gem-jar&amp;utm_campaign=Badge_Grade)
 
